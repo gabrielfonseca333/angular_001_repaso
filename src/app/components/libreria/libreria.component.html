@@ -1,0 +1,23 @@
+<div class="col-6 mx-auto">
+    <h1>Libreria</h1>
+
+    <!-- formulario para crear -->
+    <div style="padding: 10px; text-align: center;" class="card">
+        <form #comicForm="ngForm">
+            <input type="text" #cajanombre name="cajanombre" placeholder="Nombre" class="form-control">
+            <input type="text" #cajadescripcion name="cajadescripcion" placeholder="Descripcion" class="form-control">
+            <input type="text" #cajaimagen name="cajaimagen" placeholder="Imagen" class="form-control">
+            <button (click)="crearComic()" class="btn btn-dark">Crear Comic</button>
+        </form>
+    </div>
+
+    <!-- favorito -->
+    <div *ngIf="comicFavorito!=null" style="border: 1px solid gold;">
+        <h2>Favorito: {{comicFavorito.nombre}}</h2>
+    </div>
+
+    <!-- mostrar todos los comics -->
+    <div *ngFor="let comic of comics" style="padding: 10px;">
+        <app-comic [comic]="comic" (seleccionarFavorito)="marcarFavorito($event)"></app-comic>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+<div style="text-align: center; padding: 10px; box-shadow:1px 1px 20px;" class="card mx-auto">
+    <h2 class="h2">{{comic.nombre}}</h2>
+    <hr>
+    <img style="width: 200px;" class="img-fluid" src={{comic.image}}>
+    <p>{{comic.descripcion}}</p>
+    <button (click)="marcarFavorito()" class="btn btn-warning">Marcar Favorito</button>
+</div>
